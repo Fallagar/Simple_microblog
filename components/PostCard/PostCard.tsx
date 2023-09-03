@@ -100,7 +100,11 @@ const PostCard: React.FC<Props> = ({ author, id, date, content, params }) => {
       />
       <CardContent onClick={handleExpandClick}>
         {content?.map((item, index) => (
-          <Typography variant="body2" sx={{ color: "#82959B" }} key={index}>
+          <Typography
+            variant="body2"
+            sx={{ color: "#F2F4F5", fontSize: "18px" }}
+            key={index}
+          >
             {item}
           </Typography>
         ))}

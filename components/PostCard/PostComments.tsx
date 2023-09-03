@@ -2,7 +2,7 @@
 
 import { Typography } from "@mui/material";
 import { useGetCommentsQuery } from "../../redux/services/commentsApi";
-import { useEffect, useState } from "react";
+import "./PostCard.styles.scss";
 
 type Props = {
   postID: string | null;
@@ -27,7 +27,9 @@ const PostComments: React.FC<Props> = ({ postID }) => {
               const time = new Date(comment.created_at).toLocaleTimeString();
               return (
                 <Typography paragraph key={comment.id}>
-                  {comment.comment_author_name} said on {date} {time}:
+                  <span className="comment-author">
+                    {comment.comment_author_name} said on {date} {time}:
+                  </span>
                   <br />
                   {comment.content.map((item, index) => (
                     <span key={index}>{item}</span>
