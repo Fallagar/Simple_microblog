@@ -1,3 +1,4 @@
+"use client";
 import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import { styled } from "@mui/system";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -9,7 +10,7 @@ type FormValues = {
   addPost: string;
 };
 
-const AddPostCard = memo(() => {
+const AddPostCard = () => {
   const [disableButton, setDisableButton] = useState(false);
   const { refetch } = useGetPostsQuery(null);
   const {
@@ -27,7 +28,6 @@ const AddPostCard = memo(() => {
         body: JSON.stringify(post),
       });
       if (!response.ok) {
-        // Handle server errors, e.g., by showing an error message
         throw new Error(
           `Server error: ${response.status} ${response.statusText}`
         );
@@ -88,6 +88,6 @@ const AddPostCard = memo(() => {
       </button>
     </form>
   );
-});
+};
 
 export default AddPostCard;

@@ -12,7 +12,7 @@ type Props = {
   };
 };
 
-const Home = memo(({ params }: Props) => {
+const Home = ({ params }: Props) => {
   const { isLoading, isFetching, data, error } = useGetPostsQuery(null, {
     pollingInterval: 300000,
   });
@@ -50,5 +50,5 @@ const Home = memo(({ params }: Props) => {
       ) : null}
     </main>
   );
-});
+};
 export default Home;
