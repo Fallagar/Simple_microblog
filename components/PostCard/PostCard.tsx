@@ -65,7 +65,7 @@ const PostCard: React.FC<Props> = ({ author, id, date, content, params }) => {
         data.filter((item) => item.target_post_id === id).length
       );
     }
-  }, [data]);
+  }, [data, id]);
   return (
     <Card
       sx={{

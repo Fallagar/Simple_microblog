@@ -12,7 +12,7 @@ type Props = {
   };
 };
 
-const Home = ({ params }: Props) => {
+export default function Home({ params }: Props) {
   const { isLoading, isFetching, data, error } = useGetPostsQuery(null, {
     pollingInterval: 300000,
   });
@@ -50,5 +50,4 @@ const Home = ({ params }: Props) => {
       ) : null}
     </main>
   );
-};
-export default Home;
+}
