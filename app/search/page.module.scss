@@ -19,11 +19,13 @@
 }
 
 .posts_container {
-    padding-top: 100px;
+    
+    padding:0px 100px;
+    margin-bottom: 100px;
     width: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 40px;
 }

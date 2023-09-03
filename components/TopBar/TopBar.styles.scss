@@ -1,5 +1,32 @@
 .top-bar {
     height: 70px;
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid #ffffff1a;
     width: 98vw;
+    color: #F2F4F5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    >div>button {
+            cursor: pointer;
+            box-shadow: none;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            background: none;
+            padding: 10px 15px;
+            color: #F2F4F5;
+            border-radius: 0.315rem;
+            outline: none;
+            border: none;
+            >a {
+                text-decoration: none;
+                color: #F2F4F5;
+            }
+        }
+    
+        >div>button:hover {
+            background-color: #1f333a;
+    
+        }
 }
+

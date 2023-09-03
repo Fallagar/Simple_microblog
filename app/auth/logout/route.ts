@@ -3,6 +3,8 @@ import { cookies } from 'next/headers'
 import { type NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
+  const url = req.nextUrl.clone()
+  url.pathname = '/'
   const supabase = createRouteHandlerClient({ cookies })
 
   // Check if we have a session

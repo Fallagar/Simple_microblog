@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import "./SideBar.styles.scss";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import PersonSearchRoundedIcon from "@mui/icons-material/PersonSearchRounded";
@@ -9,11 +10,11 @@ function SideBar({}: Props) {
     <div className="side-bar">
       <div>
         <HomeRoundedIcon sx={{ fontSize: "42px" }} />
-        <span> Home</span>
+        <Link href={"/"}>Home</Link>
       </div>
       <div>
         <PersonSearchRoundedIcon sx={{ fontSize: "42px" }} />
-        <span>By Author</span>
+        <Link href={"/search"}>By Author</Link>
       </div>
     </div>
   );

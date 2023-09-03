@@ -1,0 +1,26 @@
+.add-comment-form {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    >button {
+        cursor: pointer;
+        box-shadow: none;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        background: none;
+        padding: 10px 15px;
+        color: white;
+        border-radius: 0.315rem;
+        outline: none;
+        border: none;
+    }
+
+    >button:hover {
+        background-color: #1f333a;
+
+    }
+}
