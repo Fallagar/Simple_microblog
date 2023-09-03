@@ -13,10 +13,10 @@ export const postsApi = createApi({
   reducerPath: "postsApi",
   refetchOnFocus: true,
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://pqcwbsgdadtfvhdtvxec.supabase.co/rest/v1/post?select=*",
+     baseUrl: `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/post?select=*`,
     prepareHeaders: (headers) => {
-      // You can set your custom headers here
-     headers.set("apikey", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxY3dic2dkYWR0ZnZoZHR2eGVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM1NjEyOTQsImV4cCI6MjAwOTEzNzI5NH0.FaOSZk5w3C_wn65M1WIFm1YRojNXO4fDhxiPqvCbp5E")
+      
+     headers.set("apikey", `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`)
       return headers;
     },
     

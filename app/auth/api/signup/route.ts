@@ -8,7 +8,7 @@ import type { Database } from '@/lib/database.types'
 export const dynamic = 'force-dynamic'
 
 export async function POST(request: Request) {
-  console.log("IN SIGNUP")
+  
   const requestUrl = new URL(request.url)
   const formData = await request.formData()
   const email = String(formData.get('email'))
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     },
   })
   if (error) { 
-    console.log("🚀 ~ file: route.ts:26 ~ POST ~ error:", error)    
+     
   }
 
   return NextResponse.redirect(requestUrl.origin, {

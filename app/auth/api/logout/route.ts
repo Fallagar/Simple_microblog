@@ -15,10 +15,10 @@ export async function POST(request: Request) {
   const { error } = await supabase.auth.signOut()
 
   if (error) {
-    console.log(error)
+    
     return NextResponse.redirect(requestUrl)
   } else {
-    console.log("redirecting")
+    
 return NextResponse.redirect(requestUrl)
   }
 

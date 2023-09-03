@@ -20,13 +20,11 @@ export async function middleware(req: NextRequest) {
         .select(`username, role`)
         .eq("id", user?.id)
       .single();    
-    if (getProfile.data?.role === "no_role") {
-      console.log("Not in account!")
+    if (getProfile.data?.role === "no_role") {      
       if (req.nextUrl.pathname !== "/account")
      return NextResponse.redirect(new URL('/account', req.url))     
     }    
-    if (getProfile.data?.role !== "no_role" && req.nextUrl.pathname === "/account") {
-      console.log("Role chosen!")
+    if (getProfile.data?.role !== "no_role" && req.nextUrl.pathname === "/account") {      
      return NextResponse.redirect(new URL('/', req.url))
     }    
 

@@ -11,8 +11,7 @@ export const dynamic = 'force-dynamic'
 export async function POST(req: NextRequest) {
     const res = NextResponse.next()
   const requestUrl = new URL(req.url)
-    const data = await req.json()
-    console.log("🚀 ~ file: route.ts:15 ~ POST ~ data:", data)
+    const data = await req.json()    
     const supabase = createMiddlewareClient<Database>({ req, res })
     const {
     data: { user },
@@ -43,7 +42,7 @@ export async function POST(req: NextRequest) {
       if (error) throw error;
       return NextResponse.json({ result: 'Comment Added' }, { status: 200 })
     } catch (error) {
-      console.log(error)
+      
       return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
     } 
   }

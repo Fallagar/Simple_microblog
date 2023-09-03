@@ -13,7 +13,6 @@ type Props = {
 };
 
 const Home = memo(({ params }: Props) => {
-  console.log("rerender");
   const { isLoading, isFetching, data, error } = useGetPostsQuery(null, {
     pollingInterval: 300000,
   });
@@ -26,7 +25,6 @@ const Home = memo(({ params }: Props) => {
     }
   }, [data]);
 
-  console.log(params.role);
   return (
     <main className={styles.posts_container}>
       {params.role === "author" && <AddPostCard />}
@@ -37,7 +35,6 @@ const Home = memo(({ params }: Props) => {
       ) : data ? (
         <>
           {reversedQuery?.map((post) => {
-            console.log(post.post_id);
             return (
               <PostCard
                 author={post.author_name}

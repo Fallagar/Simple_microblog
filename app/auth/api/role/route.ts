@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     const res = NextResponse.next()
   const requestUrl = new URL(req.url)
   const data = await req.json()
-  console.log(data)
+  
     const supabase = createMiddlewareClient<Database>({ req, res })
     const {
     data: { user },
@@ -27,9 +27,9 @@ export async function POST(req: NextRequest) {
             .update(updatedData)
             .eq('id', user?.id)
       if (error) throw error;
-      console.log("Profile updated!");
+      
     } catch (error) {
-      console.log("Error updating the data!", error);
+      
     } finally {
     }
   

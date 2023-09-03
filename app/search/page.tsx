@@ -82,7 +82,6 @@ const Search = ({ params }: Props) => {
       ) : data ? (
         <>
           {filtered?.map((post) => {
-            console.log(post.post_id);
             return (
               <PostCard
                 author={post.author_name}
